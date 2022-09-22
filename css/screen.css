@@ -489,15 +489,40 @@ label, input{
     Class to put on all input="text" like form inputs
 */
 
-.c-input {}
+.c-input {
+    /* Dit moet erbij om de standaard style van inputs op none te zetten */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 
-.c-input:focus {}
+    width: 100%;
+    border: 1px solid #e2e3e7; 
+    border-radius: 3px; /* bdrs3 */
+
+    /* font-family: inherit; */
+    font-family: "Inter Web", sans-serif;
+
+    /* opzich niet verkeerd maar padding is meestal beter */ 
+    /* height: 48px; */
+
+    line-height: 24px;
+    padding: 11px 16px; /* moet 11px zijn door border width */
+    outline: none; /* omdat we zelf een outline gaan maken */
+}
+
+.c-input:focus {
+    border-color: #3385FF;
+    /* GEEN border width aanpassen! Dit zou ervoor zorgen dat het veld verspringt */
+    box-shadow: 0 0 0 3px rgba(51, 133, 255, .3);
+}
+
 
 /*
     Component: Label
     ---
     Class to put on all form labels
 */
+
 
 .c-label {}
 
@@ -518,13 +543,34 @@ label, input{
     Class to put on form buttons or links
 */
 
-.c-button {}
+.c-button {
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 3px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #2E77E6;
+    background-color: #3385FF;
+    color: white;
+    padding: 11px 16px;
+    line-height: 24px;
+    width: 100%;
+    outline: none;
+    transition: all .1s ease;
+}
 
-.c-button:hover {}
+.c-button:hover {
+    background-color: #4F95FF;
+}
 
-.c-button:focus {}
+.c-button:focus {
+    box-shadow: 0 0 0 3px rgba(51, 133, 255, .3);
+}
 
-.c-button:active {}
+.c-button:active {
+    background-color: #2E77E6;
+    box-shadow: none;
+}
 
 .c-button--block {}
 
