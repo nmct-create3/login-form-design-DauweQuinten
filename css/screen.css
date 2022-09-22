@@ -19,7 +19,12 @@
 #Variables
 \*------------------------------------*/
 
-:root {}
+:root {
+    --global-color-alpha-light: #4F95FF;
+    --global-color-alpha: #3385FF;
+    --global-color-alpha-dark: #2E77E6;
+    --global-color-transparant: 51, 133, 255, .3;
+}
 
 /* CSS variables here */
 
@@ -42,6 +47,7 @@ html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background-color: #F5F6FA;
+    accent-color: var(--global-color-alpha-light);
 }
 
 *,
@@ -64,7 +70,7 @@ html {
 }
 
 ::selection {
-    background: #3385FF;
+    background: var(--global-color-alpha);
     color: white;
     text-shadow: none;
 }
@@ -169,18 +175,18 @@ hr {
 }
 
 a {
-    color:  #3385FF;
+    color:  var(--global-color-alpha);
     transition: all .1s ease-in-out;
 }
 
 a:visited,
 a:active {
-    color: #3385FF;
+    color: var(--global-color-alpha);
 }
 
 a:hover,
 a:focus {
-    color: #2E77E6;
+    color: var(--global-color-alpha-dark);
 }
 
 label, input{
@@ -204,6 +210,7 @@ label, input{
 
 .o-row--login {
     /* stuff here to align the card */
+
 }
 
 /* size modifiers */
@@ -463,7 +470,7 @@ label, input{
 }
 
 .c-logo__path--2{
-    fill: #3385FF;
+    fill: var(--global-color-alpha);
 }
 
 .c-logo__path--3{
@@ -476,6 +483,37 @@ label, input{
     ---
     Card with box shadow
 */
+
+.c-card{
+    background-color: white;
+    border-width: 1px;
+    border-radius: 3px;
+    /* box-shadow: 0 2px 4px rgb(0 0 0 / .1); */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+}
+
+.c-card__body{
+    margin: 48px;
+}
+
+.c-card__title{
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700px;
+    padding-top: 48px;
+}
+
+.c-card__footer{
+    padding-bottom: 24px;
+    text-align: center;
+    line-height: 17px;
+    size: 14px;
+    color: #757787;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: #E2E3E7;
+    padding-top: 24px;
+}
 
 /*
     Component: Forms
@@ -511,9 +549,9 @@ label, input{
 }
 
 .c-input:focus {
-    border-color: #3385FF;
+    border-color: var(--global-color-alpha);
     /* GEEN border width aanpassen! Dit zou ervoor zorgen dat het veld verspringt */
-    box-shadow: 0 0 0 3px rgba(51, 133, 255, .3);
+    box-shadow: 0 0 0 3px rgba(var(--global-color-transparant));
 }
 
 
@@ -524,8 +562,16 @@ label, input{
 */
 
 
-.c-label {}
+.c-label {
+    color: #606274 ;
+    font-size: 14px;
+    line-height: 16px;
+    margin-bottom: 8px;
+}
 
+.c-label--option{
+    margin: 0 8px 0 0;
+}
 
 .c-form-field--option{
     display: flex;
@@ -549,8 +595,8 @@ label, input{
     border-radius: 3px;
     border-width: 1px;
     border-style: solid;
-    border-color: #2E77E6;
-    background-color: #3385FF;
+    border-color: var(--global-color-alpha-dark);
+    background-color: var(--global-color-alpha);
     color: white;
     padding: 11px 16px;
     line-height: 24px;
@@ -560,15 +606,15 @@ label, input{
 }
 
 .c-button:hover {
-    background-color: #4F95FF;
+    background-color: var(--global-color-alpha-light);
 }
 
 .c-button:focus {
-    box-shadow: 0 0 0 3px rgba(51, 133, 255, .3);
+    box-shadow: 0 0 0 3px rgba(var(--global-color-transparant));
 }
 
 .c-button:active {
-    background-color: #2E77E6;
+    background-color: var(--global-color-alpha-dark);
     box-shadow: none;
 }
 
