@@ -183,6 +183,10 @@ a:focus {
     color: #2E77E6;
 }
 
+label, input{
+    display: block;
+}
+
 /*------------------------------------*\
 #OBJECTS
 \*------------------------------------*/
@@ -444,6 +448,28 @@ a:focus {
     ---
     Website main logo
 */
+.c-logo{
+    height: 24px;
+    display: flex;
+    justify-content: center;
+}
+
+.c-logo__svg{
+    height: 100%;
+}
+
+.c-logo__path--1{
+    fill: #20223A;
+}
+
+.c-logo__path--2{
+    fill: #3385FF;
+}
+
+.c-logo__path--3{
+    fill: #1B4186;
+}
+
 
 /*
     Component: Card
@@ -474,6 +500,13 @@ a:focus {
 */
 
 .c-label {}
+
+
+.c-form-field--option{
+    display: flex;
+    gap: 8px;
+}
+
 
 /* If a input is focused within the form-field class change te color of the label */
 
